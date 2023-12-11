@@ -12,6 +12,7 @@ public class ChatUI : MonoBehaviour
     [SerializeField] TMP_InputField m_UserMessage;
     [SerializeField] Button m_SendButton;
     [SerializeField] ChatGPTManager m_ChatGPTManager;
+    [SerializeField] AvatarVoice m_AvatarVoice;
     [SerializeField] AvatarAnimationsController m_AvatarAnimationsController;
     private bool isReadingMessage = false;
     private bool endMessageForced = false;
@@ -58,6 +59,7 @@ public class ChatUI : MonoBehaviour
     public void AskChatGPT()
     {
         string message = m_UserMessage.text;
+        m_AvatarVoice.InterruptVoice();
         m_SendButton.interactable = false;
         m_AvatarAnimationsController.SetState(AvatarAnimationsController.AvatarState.Thinking);
         m_UserMessage.text = string.Empty;
