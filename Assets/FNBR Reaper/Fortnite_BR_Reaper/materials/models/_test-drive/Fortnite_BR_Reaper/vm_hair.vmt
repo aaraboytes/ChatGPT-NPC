@@ -1,0 +1,18 @@
+VertexLitGeneric
+{
+	$basetexture "models/_test-drive/Fortnite_BR_Reaper/M_MED_Soldier_Assassin_Hair_D"
+	$bumpmap "models/_test-drive/Fortnite_BR_Reaper/M_MED_Soldier_Assassin_Hair_N"
+	$model 1
+
+	$phong 1
+	$phongfresnelranges "[.27 .7 .7]"
+	//$phongtint "[0.15 0.15 0.15]"
+	$halflambert 1
+	$phongboost .5
+	$phongexponent 24
+
+	$envmap env_cubemap
+	$normalmapalphaenvmapmask 1
+	$envmaptint "[.1 .1 .1]"
+
+}

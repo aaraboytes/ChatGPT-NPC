@@ -1,0 +1,23 @@
+"EyeRefract"
+{
+	"$Iris"               "models/_test-drive/Fortnite_Kyle/Eye_Brown_D"	  // Iris color in RGB with cornea noise in A
+	"$AmbientOcclTexture" "models/_test-drive/Fortnite_Kyle/eye-extra"				  // Ambient occlusion in RGB, A unused
+	"$Envmap"             "models/_test-drive/Fortnite_Kyle/McCree_Eye_E"  // Reflection environment map
+	"$CorneaTexture"      "models/_test-drive/Fortnite_Kyle/eye-cornea"               // Special texture that has 2D cornea normal in RG and other data in BA
+	"$lightwarptexture"   "models/_test-drive/Fortnite_Kyle/eye_lightwarp"        	      // This enables TF NPR lighting
+
+	"$EyeballRadius" "0.5"				// Default 0.5
+	"$AmbientOcclColor" "[.60 .50 .50]"	// Default 0.33, 0.33, 0.33
+	"$Glossiness" ".4"
+	"$Dilation" ".5"					// Default 0.5
+	"$ParallaxStrength" "0.25"          // Default 0.25
+	"$CorneaBumpStrength" "1.0"			// Default 1.0
+
+	"$halflambert" "0"
+	"$nodecal" "0"
+
+	// These effects are only available in ps.2.0b and later
+	"$RaytraceSphere" "0"				// Default 1 - Enables raytracing in the pixel shader to make the eyeball look round
+	"$SphereTexkillCombo" "0"			// Default 1 - Enables killing pixels that don't ray-intersect the sphere
+
+}

@@ -1,0 +1,25 @@
+VertexLitGeneric
+{
+	$basetexture "models/_test-drive/Fortnite_BR_Reaper/M_MED_Soldier_Assassin_Head_D"
+	$bumpmap "models/_test-drive/Fortnite_BR_Reaper/M_MED_Soldier_Assassin_Head_N"
+	$model 1
+
+	$color2 "[1.4 1.4 1.4]"
+
+	//$translucent 1
+	//$alphatest 1
+	//$nocull 1
+	//$ambientocclusion 0
+
+	$phong 1
+	$phongfresnelranges "[1 3 8]"
+	$phongtint "[0.2 0.2 0.2]"
+	$phongexponent 4
+	$phongboost .3
+
+	$rimlight          1
+	$rimlightexponent 24
+	$rimlightboost     1
+
+
+}
