@@ -18,6 +18,7 @@ public class ChatGPTManager : MonoBehaviour
     }
     private void Start()
     {
+        Debug.Log(authData.api_key + " " + authData.organization);
         openAI = new OpenAIApi(authData.api_key,authData.organization);
     }
     public async void AskChatGPT(string message)
