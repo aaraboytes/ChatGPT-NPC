@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AvatarVoice : MonoBehaviour
 {
-    [SerializeField] TextToSpeech m_TTS;
+    [SerializeField] TextToSpeechTechnology m_TTS;
     [SerializeField] ChatGPTManager m_ChatGPTManager;
     [SerializeField] AudioSource m_Audio;
     [SerializeField] SkinnedMeshRenderer m_AvatarSkinnedMeshRenderer;
@@ -36,7 +36,7 @@ public class AvatarVoice : MonoBehaviour
 
     private void OnChatGPTResponse(string message)
     {
-        m_TTS.MessageToSpeech(message);
+        m_TTS.Speak(message);
     }
 
     private float GetAverageVolume()
