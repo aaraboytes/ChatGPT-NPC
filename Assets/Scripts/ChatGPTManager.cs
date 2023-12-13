@@ -7,7 +7,10 @@ using UnityEngine.Events;
 public class ChatGPTManager : MonoBehaviour
 {
     public UnityAction<string> ChatGPTResponded;
+    
     [SerializeField] private TextAsset m_OpenAIAuthFile;
+    [SerializeField] private ChatGPTVoiceRecognizer m_VoiceRecognizer;
+
     private OpenAIApi openAI;
     private List<ChatMessage> messages = new List<ChatMessage>();
     private OpenAIAuth authData;
@@ -23,6 +26,7 @@ public class ChatGPTManager : MonoBehaviour
     private void InitOpenAI()
     {
         openAI = new OpenAIApi(authData.api_key,authData.organization);
+        m_VoiceRecognizer.OpenAi = openAI;
         AskChatGPT("Tu nombre es el profesor Andrés, un profesor en Ingeniería. A partir de ahora deberás responder a mis siguientes preguntas en base a tu conocimiento en Ingeniería siempre manteniendo un perfil de profesor.");
     }
     public async void AskChatGPT(string message)

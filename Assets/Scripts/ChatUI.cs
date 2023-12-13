@@ -11,6 +11,7 @@ public class ChatUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI m_Response;
     [SerializeField] TMP_InputField m_UserMessage;
     [SerializeField] Button m_SendButton;
+    [SerializeField] Button m_MicButton;
     [SerializeField] ChatGPTManager m_ChatGPTManager;
     [SerializeField] AvatarVoice m_AvatarVoice;
     [SerializeField] AvatarAnimationsController m_AvatarAnimationsController;
@@ -30,6 +31,7 @@ public class ChatUI : MonoBehaviour
     private void OnChatGPTResponded(string response)
     {
         StartCoroutine(ReadMessage(response));
+        m_UserMessage.text = string.Empty;
         m_SendButton.interactable = true;
         m_AvatarAnimationsController.SetState(AvatarAnimationsController.AvatarState.Talking);
     }
@@ -58,11 +60,11 @@ public class ChatUI : MonoBehaviour
 
     public void AskChatGPT()
     {
+        Debug.Log("Asking to chat gpt");
         string message = m_UserMessage.text;
         m_AvatarVoice.InterruptVoice();
         m_SendButton.interactable = false;
         m_AvatarAnimationsController.SetState(AvatarAnimationsController.AvatarState.Thinking);
-        m_UserMessage.text = string.Empty;
         m_ChatGPTManager.AskChatGPT(message);
     }
 }

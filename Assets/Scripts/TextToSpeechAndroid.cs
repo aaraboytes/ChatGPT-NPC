@@ -20,7 +20,6 @@ public class TextToSpeechAndroid : TextToSpeechTechnology
 
     private void OnVoicesReady()
     {
-        Debug.Log("Voices ready");
         InitVoice();
     }
 
