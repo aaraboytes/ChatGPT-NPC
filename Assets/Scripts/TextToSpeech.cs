@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 using Amazon.Polly;
 using Amazon.Polly.Model;
 using Amazon.Runtime;
-public class TextToSpeech : MonoBehaviour
+public class TextToSpeech : TextToSpeechTechnology
 {
     [SerializeField] TextAsset m_AmazonCredentials;
     [SerializeField] AudioSource m_Audio;
@@ -58,7 +58,7 @@ public class TextToSpeech : MonoBehaviour
         }
     }
 
-    public async void MessageToSpeech(string message)
+    public override async void MessageToSpeech(string message)
     {
         var request = new SynthesizeSpeechRequest()
         {
