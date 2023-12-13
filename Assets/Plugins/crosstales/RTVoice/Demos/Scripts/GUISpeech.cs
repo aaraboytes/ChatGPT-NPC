@@ -199,6 +199,7 @@ namespace Crosstales.RTVoice.Demo
                int jj = 0;
                for (int ii = 0; ii < items.Count; ii++)
                {
+                        Debug.Log(Culture.text+ " Loading voice " + items[ii].Name);
                   //this is used instead of a double for loop because itemCount may not fit perfectly into the rows/columns
                   if (ii % ColumnCount == 0)
                      jj++;
