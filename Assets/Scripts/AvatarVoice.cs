@@ -30,13 +30,18 @@ public class AvatarVoice : MonoBehaviour
         if(loadness > 0)
         {
             float movement = Mathf.Clamp(loadness / m_MaxVolume, 0, 1);
-            m_AvatarSkinnedMeshRenderer.SetBlendShapeWeight(m_BlendShapeIndex, movement * 100);
+            SetMouthMovement(movement * 100);
         }
     }
 
     private void OnChatGPTResponse(string message)
     {
         m_TTS.Speak(message);
+    }
+
+    private void SetMouthMovement(float movement)
+    {
+        m_AvatarSkinnedMeshRenderer.SetBlendShapeWeight(m_BlendShapeIndex,movement);
     }
 
     private float GetAverageVolume()
@@ -54,5 +59,6 @@ public class AvatarVoice : MonoBehaviour
     public void InterruptVoice()
     {
         m_Audio.Stop();
+        SetMouthMovement(0);
     }
 }

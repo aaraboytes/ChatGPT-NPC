@@ -71,6 +71,7 @@ public class VoiceRecognizerController : MonoBehaviour
 
     private void OnRecordButtonPressed()
     {
+        m_ChatUI.Interrupt();
         m_AvatarVoice.InterruptVoice();
         m_ChatGPTVoiceRecognizer.StartRecording();
     }

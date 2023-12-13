@@ -43,7 +43,7 @@ public class ChatUI : MonoBehaviour
         int messageLenght = message.Length;
         int currentMessageLenght = 0;
         m_Response.text = "";
-        while(currentMessageLenght < messageLenght || endMessageForced)
+        while(currentMessageLenght < messageLenght && !endMessageForced)
         {
             m_Response.text += message[currentMessageLenght];
             currentMessageLenght++;
@@ -62,9 +62,16 @@ public class ChatUI : MonoBehaviour
     {
         Debug.Log("Asking to chat gpt");
         string message = m_UserMessage.text;
+        if (isReadingMessage)
+            Interrupt();
         m_AvatarVoice.InterruptVoice();
         m_SendButton.interactable = false;
         m_AvatarAnimationsController.SetState(AvatarAnimationsController.AvatarState.Thinking);
         m_ChatGPTManager.AskChatGPT(message);
+    }
+
+    public void Interrupt()
+    {
+        endMessageForced = true;
     }
 }
