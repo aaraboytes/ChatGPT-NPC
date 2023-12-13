@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Plugins/crosstales/RTVoice/Demos/01-Speech.unity
+    guid: 6b5aa7bf1471d794aaec34c02a74ed81
   m_configObjects: {}

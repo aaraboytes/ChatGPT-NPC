@@ -162,7 +162,7 @@ PlayerSettings:
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 22
+  AndroidMinSdkVersion: 33
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -824,7 +824,23 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    EmbeddedLinux: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    GameCoreScarlett: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    GameCoreXboxOne: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    LinuxHeadlessSimulation: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    Nintendo Switch: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    PS4: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    PS5: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    QNX: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    Stadia: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    Standalone: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    WebGL: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    Windows Store Apps: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    XboxOne: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    iPhone: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
+    tvOS: CT_RTV;CT_PROC;CT_UI;CT_RTV_DEMO
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -849,7 +865,7 @@ PlayerSettings:
   suppressCommonWarnings: 1
   allowUnsafeCode: 1
   useDeterministicCompilation: 1
-  selectedPlatform: 4
+  selectedPlatform: 2
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1
