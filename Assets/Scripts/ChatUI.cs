@@ -33,6 +33,7 @@ public class ChatUI : MonoBehaviour
         StartCoroutine(ReadMessage(response));
         m_UserMessage.text = string.Empty;
         m_SendButton.interactable = true;
+        m_MicButton.interactable = true;
         m_AvatarAnimationsController.SetState(AvatarAnimationsController.AvatarState.Talking);
     }
 
@@ -66,6 +67,7 @@ public class ChatUI : MonoBehaviour
             Interrupt();
         m_AvatarVoice.InterruptVoice();
         m_SendButton.interactable = false;
+        m_MicButton.interactable = false;
         m_AvatarAnimationsController.SetState(AvatarAnimationsController.AvatarState.Thinking);
         m_ChatGPTManager.AskChatGPT(message);
     }
