@@ -7,14 +7,14 @@ using UnityEngine.Events;
 public class ChatGPTManager : MonoBehaviour
 {
     public UnityAction<string> ChatGPTResponded;
-    
+
+    [SerializeField][TextArea(10,50)] private string m_BotInitializerPrompt;
     [SerializeField] private TextAsset m_OpenAIAuthFile;
     [SerializeField] private ChatGPTVoiceRecognizer m_VoiceRecognizer;
 
     private OpenAIApi openAI;
     private List<ChatMessage> messages = new List<ChatMessage>();
     private OpenAIAuth authData;
-    private readonly string initialPrompt = "Eres un profesor de Ingeniería en una universidad. Vas a interactuar con alumnos de los primeros semestres de la carrera. Responde a las preguntas manteniendo tu perfil de profesor, con respuestas claras, cortas y que estén orientadas a ser entendidas por alumnos. Da respuestas académicas que hagan referencias a fórmulas y temas enseñados en la universidad. Responde lo más rápido posible.";
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class ChatGPTManager : MonoBehaviour
         openAI = new OpenAIApi(authData.api_key,authData.organization);
         m_VoiceRecognizer.OpenAi = openAI;
         ChatMessage newMessage = new ChatMessage();
-        newMessage.Content = initialPrompt;
+        newMessage.Content = m_BotInitializerPrompt;
         newMessage.Role = "user";
 
         messages.Add(newMessage);
@@ -44,9 +44,8 @@ public class ChatGPTManager : MonoBehaviour
         {
             var chatResponse = response.Choices[0].Message;
             messages.Add(chatResponse);
-
             Debug.Log(chatResponse.Content);
-            ChatGPTResponded?.Invoke("Hola, soy tu profesor virtual de Ingeniería, soy una Inteligencia Artificial dispuesta a proveerte de información y conocimientos en todas las ramas de Ingeniería. Adelante, puedes preguntarme cualquier cosa.");
+            ChatGPTResponded?.Invoke(chatResponse.Content);
         }
     }
     public async void AskChatGPT(string message)

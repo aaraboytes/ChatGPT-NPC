@@ -8,14 +8,26 @@ using System;
 public class TextToSpeechAndroid : TextToSpeechTechnology
 {
     [SerializeField] AudioSource m_Audio;
+
     private Crosstales.RTVoice.Model.Enum.Gender gender = Crosstales.RTVoice.Model.Enum.Gender.MALE;
     private string culture = "es";
     private Crosstales.RTVoice.Model.Voice voice;
     private string uid = string.Empty;
-    
+
     private void Start()
     {
         Speaker.Instance.OnVoicesReady += OnVoicesReady;
+        Speaker.Instance.OnSpeakCompleted.AddListener(OnSpeakCompleted);
+    }
+
+    private void Update()
+    {
+        isSpeaking = Speaker.Instance.isSpeaking;
+    }
+
+    protected override void OnSpeakCompleted(string arg0)
+    {
+        SpeakCompleted?.Invoke();
     }
 
     private void OnVoicesReady()
@@ -44,6 +56,7 @@ public class TextToSpeechAndroid : TextToSpeechTechnology
             if(!string.IsNullOrEmpty(uid))
                 Speaker.Instance.Silence(uid);
             uid = Speaker.Instance.Speak(message, m_Audio, voice, true, GUISpeech.Rate, GUISpeech.Pitch, GUISpeech.Volume);
+            isSpeaking = true;
         }
     }
 }

@@ -72,6 +72,11 @@ public class TextToSpeech : TextToSpeechTechnology
         WriteIntoFile(response.AudioStream);
         PlaySpeech();
     }
+
+    protected override void OnSpeakCompleted(string arg0)
+    {
+        SpeakCompleted?.Invoke();
+    }
 }
 
 [System.Serializable]
