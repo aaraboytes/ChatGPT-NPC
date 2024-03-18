@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: Toggles
+  m_EditorClassIdentifier: 
+  controls:
+  - name: Clothing
+    icon: {fileID: 2800000, guid: a06282136d558c54aa15d533f163ff59, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 596b65bb33a55a045b1ada6f57c7c6a5, type: 2}
+    subParameters: []
+    labels: []
+  - name: Accessories
+    icon: {fileID: 2800000, guid: a06282136d558c54aa15d533f163ff59, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: ae8f6b47b4c486f4e8158b38fb4c753d, type: 2}
+    subParameters: []
+    labels: []
+  - name: Extras&Swaps
+    icon: {fileID: 2800000, guid: a06282136d558c54aa15d533f163ff59, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 7a44d7b73871bb04c870eec259798174, type: 2}
+    subParameters: []
+    labels: []
